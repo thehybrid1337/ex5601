@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# Check if kmod-mtd-rw is installed
 if ! opkg list-installed | grep -q "kmod-mtd-rw"; then
     opkg update
     opkg install kmod-mtd-rw
@@ -9,7 +8,6 @@ if ! opkg list-installed | grep -q "kmod-mtd-rw"; then
         exit 1
     fi
 fi
-
 
 rmmod mtd-rw
 ubidetach -p /dev/mtd6
